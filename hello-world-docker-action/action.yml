@@ -1,0 +1,17 @@
+name: Hello World Docker action
+description: Greet someone and record the time
+author: Mark Wilkinson
+
+inputs:
+  who-to-greet:
+    description: Who to greet
+    required: true
+    default: World
+outputs:
+  time-of-day:
+    description: The time we greeted them
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
